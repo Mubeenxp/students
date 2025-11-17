@@ -6,6 +6,7 @@
   <title>Add Student - Dashboard</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
   <style>
     .preview-img {
       width: 100%;
@@ -104,73 +105,131 @@
           </div>
           <div class="card-body">
             <div class="row g-3">
-              <div class="col-md-6">
-                <label class="form-label">Student ID *</label>
-                <div class="input-group">
-                  <input id="stuStudentId" class="form-control" placeholder="Auto-generated" required readonly>
-                  <button class="btn btn-outline-secondary auto-generate-btn" type="button" onclick="generateStudentId()" title="Generate New ID">
-                    <i class="fas fa-sync-alt"></i>
-                  </button>
-                </div>
-                <div class="form-text">
-                  <small>ID will be auto-generated. Click <i class="fas fa-sync-alt"></i> to regenerate.</small>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Full Name *</label>
-                <input id="stuName" class="form-control" placeholder="Enter full name" required>
-                <div class="invalid-feedback">Please enter student's full name.</div>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Father's Name</label>
-                <input id="stuFather" class="form-control" placeholder="Enter father's name">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Email</label>
-                <input id="stuEmail" type="email" class="form-control" placeholder="Enter email address">
-                <div class="invalid-feedback">Please enter a valid email address.</div>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Phone *</label>
-                <input id="stuPhone" type="tel" class="form-control" placeholder="Enter phone number" required>
-                <div class="invalid-feedback">Please enter a valid phone number (e.g., 03001234567).</div>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Batch</label>
-                <input id="stuBatch" class="form-control" placeholder="Enter batch">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Campus *</label>
-                <select id="stuCampus" class="form-select" required>
-                  <option value="">Select Campus</option>
-                  <option value="campus-a">Campus A</option>
-                  <option value="campus-b">Campus B</option>
-                </select>
-                <div class="invalid-feedback">Please select a campus.</div>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Course *</label>
-                <select id="stuCourse" class="form-select" required>
-                  <option value="">Loading courses...</option>
-                </select>
-                <div class="invalid-feedback">Please select a course.</div>
-              </div>
-              
-              <!-- Photo Upload Section -->
-              <div class="col-12">
-                <label class="form-label">Student Photo</label>
-                <input id="stuPhoto" type="file" accept="image/*" class="form-control">
-                <div class="form-text">Upload a clear passport-size photo (optional, max 2MB)</div>
-                <div class="invalid-feedback">Please select a valid image file (JPEG, PNG, JPG).</div>
-                
-                <!-- Photo Preview -->
-                <div id="photoPreviewContainer" class="mt-2" style="display: none;">
-                  <img id="photoPreview" class="photo-preview" alt="Photo Preview">
-                  <button type="button" class="btn btn-sm btn-outline-danger ms-2" onclick="removePhoto()">
-                    <i class="fas fa-times"></i> Remove
-                  </button>
-                </div>
-              </div>
+            <!-- Student ID Field with Icon -->
+<div class="col-md-6">
+    <label class="form-label">Student ID *</label>
+    <div class="input-group">
+        <span class="input-group-text">
+            <i class="fas fa-id-card"></i>
+        </span>
+        <input id="stuStudentId" class="form-control" placeholder="Auto-generated" required readonly>
+        <button class="btn btn-outline-secondary auto-generate-btn" type="button" onclick="generateStudentId()" title="Generate New ID">
+            <i class="fas fa-sync-alt"></i>
+        </button>
+    </div>
+    <div class="form-text">
+        <small>ID will be auto-generated. Click <i class="fas fa-sync-alt"></i> to regenerate.</small>
+    </div>
+</div>
+
+<!-- Full Name Field with Icon -->
+<div class="col-md-6">
+    <label class="form-label">Full Name *</label>
+    <div class="input-group">
+        <span class="input-group-text">
+            <i class="fas fa-user"></i>
+        </span>
+        <input id="stuName" class="form-control" placeholder="Enter full name" required>
+    </div>
+    <div class="invalid-feedback">Please enter student's full name.</div>
+</div>
+
+<!-- Father's Name Field with Icon -->
+<div class="col-md-6">
+    <label class="form-label">Father's Name</label>
+    <div class="input-group">
+        <span class="input-group-text">
+            <i class="fas fa-user-friends"></i>
+        </span>
+        <input id="stuFather" class="form-control" placeholder="Enter father's name">
+    </div>
+</div>
+
+<!-- Email Field with Icon -->
+<div class="col-md-6">
+    <label class="form-label">Email</label>
+    <div class="input-group">
+        <span class="input-group-text">
+            <i class="fas fa-envelope"></i>
+        </span>
+        <input id="stuEmail" type="email" class="form-control" placeholder="Enter email address">
+    </div>
+    <div class="invalid-feedback">Please enter a valid email address.</div>
+</div>
+
+<!-- Phone Field with Icon -->
+<div class="col-md-6">
+    <label class="form-label">Phone *</label>
+    <div class="input-group">
+        <span class="input-group-text">
+            <i class="fas fa-phone"></i>
+        </span>
+        <input id="stuPhone" type="tel" class="form-control" placeholder="Enter phone number" required>
+    </div>
+    <div class="invalid-feedback">Please enter a valid phone number (e.g., 03001234567).</div>
+</div>
+
+<!-- Batch Field with Icon -->
+<div class="col-md-6">
+    <label class="form-label">Batch</label>
+    <div class="input-group">
+        <span class="input-group-text">
+            <i class="fas fa-users"></i>
+        </span>
+        <input id="stuBatch" class="form-control" placeholder="Enter batch">
+    </div>
+</div>
+
+<!-- Campus Field with Icon -->
+<div class="col-md-6">
+    <label class="form-label">Campus *</label>
+    <div class="input-group">
+        <span class="input-group-text">
+            <i class="fas fa-building"></i>
+        </span>
+        <select id="stuCampus" class="form-select" required>
+            <option value="">Select Campus</option>
+            <option value="campus-a">Campus A</option>
+            <option value="campus-b">Campus B</option>
+        </select>
+    </div>
+    <div class="invalid-feedback">Please select a campus.</div>
+</div>
+
+<!-- Course Field with Icon -->
+<div class="col-md-6">
+    <label class="form-label">Course *</label>
+    <div class="input-group">
+        <span class="input-group-text">
+            <i class="fas fa-book"></i>
+        </span>
+        <select id="stuCourse" class="form-select" required>
+            <option value="">Loading courses...</option>
+        </select>
+    </div>
+    <div class="invalid-feedback">Please select a course.</div>
+</div>
+
+<!-- Photo Upload Field with Icon -->
+<div class="col-12">
+    <label class="form-label">Student Photo</label>
+    <div class="input-group">
+        <span class="input-group-text">
+            <i class="fas fa-camera"></i>
+        </span>
+        <input id="stuPhoto" type="file" accept="image/*" class="form-control">
+    </div>
+    <div class="form-text">Upload a clear passport-size photo (optional, max 2MB)</div>
+    <div class="invalid-feedback">Please select a valid image file (JPEG, PNG, JPG).</div>
+    
+    <!-- Photo Preview -->
+    <div id="photoPreviewContainer" class="mt-2" style="display: none;">
+        <img id="photoPreview" class="photo-preview" alt="Photo Preview">
+        <button type="button" class="btn btn-sm btn-outline-danger ms-2" onclick="removePhoto()">
+            <i class="fas fa-times"></i> Remove
+        </button>
+    </div>
+</div>
               
               <div class="col-12">
                 <button id="addStudentBtn" class="btn btn-primary w-100 py-2">
